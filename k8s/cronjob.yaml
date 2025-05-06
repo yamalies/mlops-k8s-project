@@ -1,0 +1,23 @@
+# k8s/cronjob.yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: model-retraining
+spec:
+  schedule: "0 2 * * 0"  # Every Sunday at 2 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: model-retraining
+            image: yamal50000/model-trainer:latest
+            command: ["python", "train.py", "--retraining"]
+            volumeMounts:
+            - name: model-volume
+              mountPath: /models
+          volumes:
+          - name: model-volume
+            persistentVolumeClaim:
+              claimName: model-pvc
+          restartPolicy: OnFailure

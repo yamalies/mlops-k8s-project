@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/presentation/mlops-k8s-project/mlruns/715649018385208358/52b9402db7b64b4b9d46b6a1b221913c/artifacts
+end_time: 1746452095232
+entry_point_name: ''
+experiment_id: '715649018385208358'
+lifecycle_stage: active
+run_id: 52b9402db7b64b4b9d46b6a1b221913c
+run_name: delightful-finch-44
+run_uuid: 52b9402db7b64b4b9d46b6a1b221913c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746452083346
+status: 3
+tags: []
+user_id: Admin

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/presentation/mlops-k8s-project/mlruns/715649018385208358/e640500298c44673aa3f3c798c7901ac/artifacts
+end_time: 1746452045135
+entry_point_name: ''
+experiment_id: '715649018385208358'
+lifecycle_stage: active
+run_id: e640500298c44673aa3f3c798c7901ac
+run_name: caring-koi-716
+run_uuid: e640500298c44673aa3f3c798c7901ac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746452044988
+status: 4
+tags: []
+user_id: Admin

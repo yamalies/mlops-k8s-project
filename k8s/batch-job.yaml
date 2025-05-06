@@ -1,0 +1,28 @@
+# k8s/batch-job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: model-training
+spec:
+  template:
+    spec:
+      containers:
+      - name: model-training
+        image: yamal50000/model-trainer:latest
+        command: ["python", "train.py"]
+        volumeMounts:
+        - name: model-volume
+          mountPath: /models
+        resources:
+          limits:
+            cpu: "1"
+            memory: "2Gi"
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+      volumes:
+      - name: model-volume
+        persistentVolumeClaim:
+          claimName: model-pvc
+      restartPolicy: Never
+  backoffLimit: 2

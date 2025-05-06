@@ -1,0 +1,12 @@
+# k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-model-api
+spec:
+  selector:
+    app: ml-model-api
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: ClusterIP

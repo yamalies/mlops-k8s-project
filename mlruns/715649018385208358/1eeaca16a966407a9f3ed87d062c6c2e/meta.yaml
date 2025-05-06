@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/presentation/mlops-k8s-project/mlruns/715649018385208358/1eeaca16a966407a9f3ed87d062c6c2e/artifacts
+end_time: 1746451895390
+entry_point_name: ''
+experiment_id: '715649018385208358'
+lifecycle_stage: active
+run_id: 1eeaca16a966407a9f3ed87d062c6c2e
+run_name: righteous-sow-58
+run_uuid: 1eeaca16a966407a9f3ed87d062c6c2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746451895351
+status: 4
+tags: []
+user_id: Admin

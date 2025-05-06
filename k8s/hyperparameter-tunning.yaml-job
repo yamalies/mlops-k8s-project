@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hyperparameter-tuning
+spec:
+  parallelism: 3  # Run multiple experiments in parallel
+  completions: 6  # Total number of experiments
+  template:
+    spec:
+      containers:
+      - name: tuning
+        image: your-ml-image
+        command: 
+        - "python"
+        - "train.py"
+        - "--learning_rate=$(LR)"
+        - "--batch_size=$(BATCH_SIZE)"
+        env:
+        - name: LR
+          valueFrom:
+            configMapKeyRef:
+              name: hp-config
+              key: learning_rate
+        - name: BATCH_SIZE
+          valueFrom:
+            configMapKeyRef:
+              name: hp-config
+              key: batch_size
