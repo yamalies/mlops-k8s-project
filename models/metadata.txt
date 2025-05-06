@@ -1,0 +1,4 @@
+Model type: RandomForestClassifier
+Training timestamp: 2025-05-06 08:13:20.817010
+Feature count: 20
+Class count: 2
