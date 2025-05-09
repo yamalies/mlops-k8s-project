@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: ml-model-api
 spec:
-  replicas: 3
+  replicas: 1  # Reduce replicas to 1 for initial testing
   selector:
     matchLabels:
       app: ml-model-api
@@ -13,34 +13,29 @@ spec:
       labels:
         app: ml-model-api
     spec:
+      volumes:
+      - name: model-volume
+        persistentVolumeClaim:
+          claimName: ml-model-pvc-new
       containers:
       - name: ml-model-api
         image: yamal50000/ml-model-api:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
-        resources:
-          limits:
-            cpu: "500m"
-            memory: "1Gi"
-          requests:
-            cpu: "250m"
-            memory: "500Mi"
         volumeMounts:
         - name: model-volume
-          mountPath: /models
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 5000
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          mountPath: /app/models
+        resources:
+          requests:
+            memory: "500Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
         readinessProbe:
           httpGet:
             path: /health
             port: 5000
           initialDelaySeconds: 15
           periodSeconds: 5
-      volumes:
-      - name: model-volume
-        persistentVolumeClaim:
-          claimName: model-pvc

@@ -5,7 +5,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
-COPY /models/model.pkl /models/model.pkl
+COPY model.pkl /model.pkl
 
 EXPOSE 5000
 

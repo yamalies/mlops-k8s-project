@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy model code
 COPY train.py model.py ./
-COPY data/train.csv /data/train.csv
+COPY /data/train.csv /data/train.csv
 
 # Create data directory
 RUN mkdir -p /data

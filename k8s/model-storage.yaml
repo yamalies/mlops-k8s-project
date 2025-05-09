@@ -1,0 +1,27 @@
+# k8s/model-storage.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: model-pv
+spec:
+  capacity:
+    storage: 10Gi  # Match the PVC storage request
+  accessModes:
+    - ReadWriteMany  # Match the original PVC access mode
+  hostPath:
+    path: "/root/workspace/yamal/mlops-k8s-project/models"
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard  # Match the original storage class
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: model-pvc
+spec:
+  accessModes:
+    - ReadWriteMany  # Keep the original access mode
+  resources:
+    requests:
+      storage: 10Gi  # Keep the original size
+  storageClassName: standard  # Keep the original storage class
