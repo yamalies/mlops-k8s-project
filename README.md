@@ -42,7 +42,7 @@ docker push yamal50000/ml-model-api:latest
 ```
 ### 3. Deploy Persistent Storage
 ```bash
-kubectl apply -f k8s/pv-pvc.yaml
+kubectl apply -f k8s/model-storage.yaml
 ```
 ### 4. Deploy Model API
 ```bash

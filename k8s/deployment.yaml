@@ -16,7 +16,7 @@ spec:
       volumes:
       - name: model-volume
         persistentVolumeClaim:
-          claimName: ml-model-pvc-new
+          claimName: model-pvc
       containers:
       - name: ml-model-api
         image: yamal50000/ml-model-api:latest
