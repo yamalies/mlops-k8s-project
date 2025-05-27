@@ -1,6 +1,0 @@
-artifact_location: file:///D:/presentation/mlops-k8s-project/mlruns/715649018385208358
-creation_time: 1746451823212
-experiment_id: '715649018385208358'
-last_update_time: 1746451823212
-lifecycle_stage: active
-name: model-training

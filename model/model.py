@@ -1,4 +1,3 @@
-# model/model.py
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.base import BaseEstimator, ClassifierMixin
