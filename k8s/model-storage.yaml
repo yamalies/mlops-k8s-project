@@ -1,4 +1,3 @@
-# k8s/model-storage.yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:

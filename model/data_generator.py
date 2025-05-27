@@ -1,4 +1,3 @@
-# model/data_generator.py
 """
 Utility script to generate synthetic data for testing the ML pipeline.
 This can be useful when you want to test your MLOps setup without real data.

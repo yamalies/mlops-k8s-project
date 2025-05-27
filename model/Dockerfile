@@ -1,4 +1,3 @@
-# model/Dockerfile
 FROM python:latest
 
 WORKDIR /app
